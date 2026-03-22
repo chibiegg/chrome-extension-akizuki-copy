@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 280px;
+      font-family: "Hiragino Sans", "Meiryo", sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #e8380d;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    header .logo {
+      font-size: 18px;
+    }
+    header .title {
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+      line-height: 1.3;
+    }
+    header .subtitle {
+      font-size: 10px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 1px;
+    }
+    .body {
+      padding: 14px 16px;
+    }
+    .description {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .format-label {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 4px;
+    }
+    .format-example {
+      font-family: monospace;
+      font-size: 12px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 6px 8px;
+      color: #444;
+      margin-bottom: 14px;
+      max-height: 100px;
+      overflow-y: auto;
+      line-height: 1.8;
+    }
+    .format-example.empty {
+      color: #999;
+      font-family: "Hiragino Sans", "Meiryo", sans-serif;
+      font-size: 12px;
+    }
+    .format-example .row-code {
+      color: #1a5fa8;
+    }
+    .format-example .row-qty {
+      color: #2a7a3b;
+    }
+    .format-example span.tab {
+      display: inline-block;
+      background: #ddd;
+      color: #666;
+      font-size: 10px;
+      padding: 0 3px;
+      border-radius: 2px;
+      margin: 0 2px;
+      vertical-align: middle;
+    }
+    button {
+      width: 100%;
+      padding: 11px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #e8380d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+      transition: background 0.15s;
+    }
+    button:hover {
+      background: #c02d0a;
+    }
+    button:active {
+      background: #a82508;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      min-height: 1.6em;
+      padding: 6px 8px;
+      border-radius: 4px;
+      display: none;
+    }
+    #status.success {
+      display: block;
+      background: #e6f4ea;
+      color: #2a7a3b;
+    }
+    #status.error {
+      display: block;
+      background: #fdecea;
+      color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛒</div>
+    <div>
+      <div class="title">秋月電子 買い物かごコピー</div>
+      <div class="subtitle">akizukidenshi.com</div>
+    </div>
+  </header>
+  <div class="body">
+    <div class="description">
+      買い物かごの全商品の<strong>販売コード</strong>と<strong>数量</strong>を<br>タブ区切りでクリップボードにコピーします。
+    </div>
+    <div class="format-label">コピー内容プレビュー（1行 = 1商品）</div>
+    <div class="format-example" id="preview">読み込み中…</div>
+    <button id="copyBtn">📋 クリップボードにコピー</button>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

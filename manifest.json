@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "秋月電子 買い物かごコピー",
+  "version": "1.0",
+  "description": "秋月電子の買い物かごの販売コードと数量をタブ区切りでクリップボードにコピーします",
+  "author": "chibiegg",
+  "homepage_url": "https://github.com/chibiegg/chrome-extension-akizuki-copy",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://akizukidenshi.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "買い物かごをコピー"
+  }
+}

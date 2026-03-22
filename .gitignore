@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Chrome拡張のパッケージファイル
+*.crx
+*.pem
+
+# エディタ
+.vscode/
+.idea/
+
+# 開発用サンプルファイル
+sample.html
